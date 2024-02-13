@@ -1,0 +1,21 @@
+server:
+  port: 8080
+
+eureka:
+  instance:
+    hostname: localhost
+
+spring:
+  application:
+    name: gateway
+  cloud:
+    gateway:
+      routes:
+        - id: taskService
+          uri: http://localhost:8081/
+          predicates:
+            - Path=/tasks/**
+        - id: executorService
+          uri: http://localhost:8082/
+          predicates:
+            - Path=/executors/**

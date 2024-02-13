@@ -1,0 +1,16 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/rashen-db
+    username: root
+    password: root
+  jpa:
+    hibernate.ddl-auto: update
+    show-sql: true
+  application:
+    name: executorService
+
+server:
+  port: 8082
+eureka:
+  instance:
+    hostname: localhost
